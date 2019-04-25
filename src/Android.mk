@@ -173,6 +173,6 @@ LOCAL_C_INCLUDES += external/json-c \
 LOCAL_CFLAGS := -std=gnu99 $(PA_DEFINES) -DHAVE_SYS_MMAN_H
 LOCAL_MODULE := libpulse
 LOCAL_SHARED_LIBRARIES:= libjson libasound libsndfile
-LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 include $(BUILD_SHARED_LIBRARY)
