@@ -53,27 +53,27 @@ PA_DEFINES := \
   -DHAVE_SYSCONF \
   -DHAVE_POLL_H \
   -DPAGE_SIZE=4096 \
-  -DPA_BINARY=\"/system/bin/pulseaudio\" \
-  -DPA_DEFAULT_CONFIG_DIR=\"/system/etc/pulse\" \
+  -DPA_BINARY=\"/vendor/bin/pulseaudio\" \
+  -DPA_DEFAULT_CONFIG_DIR=\"/vendor/etc/pulse\" \
   -DATOMIC_ARM_LINUX_HELPERS \
   -DGETGROUPS_T=gid_t \
   -DPA_MACHINE_ID=\"/usr/var/lib/dbus/machine-id\" \
   -DPA_MACHINE_ID_FALLBACK=\"/usr/etc/machine-id\" \
   -DPA_SYSTEM_RUNTIME_PATH=\"/run/user/1000/pulse\" \
   -DPA_BUILDDIR=\"\" \
-  -DPA_DLSEARCHPATH=\"/system/lib/pulse\" \
+  -DPA_DLSEARCHPATH=\"/vendor/lib/pulse\" \
   -DPA_SYSTEM_USER=\"system\" \
   -DPA_SYSTEM_GROUP=\"system\" \
   -DPA_SYSTEM_STATE_PATH=\"/data/local/pulse\" \
-  -DPA_SYSTEM_CONFIG_PATH=\"/system/etc/pulse\" \
+  -DPA_SYSTEM_CONFIG_PATH=\"/vendor/etc/pulse\" \
   -DDISABLE_ORC \
   -DPACKAGE \
   -DPACKAGE_NAME=\"pulseaudio\" \
   -DPACKAGE_VERSION=\"1.99\" \
   -DCANONICAL_HOST=\"\" \
   -DPA_CFLAGS=\"\" \
-  -DPA_ALSA_PROFILE_SETS_DIR=\"/system/etc/pulse/profiles\" \
-  -DPA_ALSA_PATHS_DIR=\"/system/etc/pulse/paths\" \
+  -DPA_ALSA_PROFILE_SETS_DIR=\"/vendor/etc/pulse/profiles\" \
+  -DPA_ALSA_PATHS_DIR=\"/vendor/etc/pulse/paths\" \
   -DPA_ACCESS_GROUP=\"audio\" \
   -UNDEBUG \
   -D_POSIX_SOURCE \
@@ -172,6 +172,7 @@ LOCAL_C_INCLUDES += external/json-c \
 
 LOCAL_CFLAGS := -std=gnu99 $(PA_DEFINES) -DHAVE_SYS_MMAN_H -D_GNU_SOURCE
 LOCAL_MODULE := libpulse
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SHARED_LIBRARIES:= libjson libasound libsndfile
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
