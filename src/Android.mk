@@ -170,7 +170,7 @@ LOCAL_C_INCLUDES += external/json-c \
   external/alsa-lib/include \
   external/libsndfile/src
 
-LOCAL_CFLAGS := -std=gnu99 $(PA_DEFINES) -DHAVE_SYS_MMAN_H
+LOCAL_CFLAGS := -std=gnu99 $(PA_DEFINES) -DHAVE_SYS_MMAN_H -D_GNU_SOURCE
 LOCAL_MODULE := libpulse
 LOCAL_SHARED_LIBRARIES:= libjson libasound libsndfile
 LOCAL_MODULE_TAGS := optional
